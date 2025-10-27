@@ -12,4 +12,9 @@ public class Car {
     public void MovingCar(Integer count) {
         pos += count;
     }
+
+    public void showCarPos() {
+        String posHyphen = "-".repeat(pos);
+        System.out.println(name + " : "  + posHyphen); // pobi : --
+    }
 }

@@ -23,6 +23,16 @@ public class Game {
         for (int i = 0; i < carNames.length; i++) {
             cars[i] = new Car(carNames[i]);
         }
+
+        System.out.println("\n실행 결과");
+
+        // 라운드
+        for (int i = 0; i < userCountInput; i++) {
+            startRound(cars);
+            showRoundResult(cars);
+            System.out.println();
+        }
+
     }
 
     /**
@@ -51,5 +61,23 @@ public class Game {
      */
     private Integer getRandomNumber() {
         return Randoms.pickNumberInRange(0, 9);
+    }
+
+    /**
+     * 한 차수 라운드
+     */
+    private void startRound(Car[] cars) {
+        for (Car car : cars) {
+            car.MovingCar(getRandomNumber());
+        }
+    }
+
+    /**
+     * 한 차수 라운드 실행 결과
+     */
+    private void showRoundResult(Car[] cars) {
+        for (Car car : cars) {
+            car.showCarPos();
+        }
     }
 }
