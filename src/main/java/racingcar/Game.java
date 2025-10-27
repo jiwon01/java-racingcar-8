@@ -1,6 +1,6 @@
 package racingcar;
 
-import camp.nextstep.edu.missionutils.Console;
+import camp.nextstep.edu.missionutils.*;
 
 public class Game {
     public void StartGame() {
@@ -37,5 +37,12 @@ public class Game {
                 throw new IllegalArgumentException("자동차의 이름이 5자를 초과했습니다");
             }
         }
+    }
+
+    /**
+     * 랜덤 수 뽑기
+     */
+    private Integer getRandomNumber() {
+        return Randoms.pickNumberInRange(0, 9);
     }
 }
