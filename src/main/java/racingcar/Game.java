@@ -1,5 +1,9 @@
 package racingcar;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import camp.nextstep.edu.missionutils.*;
 
 public class Game {
@@ -32,6 +36,9 @@ public class Game {
             showRoundResult(cars);
             System.out.println();
         }
+
+        // 최종 결과 출력
+        showWinner(List.of(cars));
 
     }
 
@@ -79,5 +86,26 @@ public class Game {
         for (Car car : cars) {
             car.showCarPos();
         }
+    }
+
+    /**
+     * 우승자 출력
+     */
+    private void showWinner(List<Car> cars) {
+        int maxPos = cars.stream()
+                .mapToInt(car -> car.getPos())
+                .max()
+                .orElse(0);
+
+        List<Car> winners = new ArrayList<>();
+        for (Car car : cars)
+            if (car.getPos() == maxPos) {
+                winners.add(car);
+            }
+
+        System.out.println("최종 우승자 : " + cars.stream()
+                .filter(car -> car.getPos() == maxPos)
+                .map(Car::getName)
+                .collect(Collectors.joining(",")));
     }
 }

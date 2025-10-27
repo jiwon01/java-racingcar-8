@@ -9,6 +9,14 @@ public class Car {
         this.pos = 0;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Integer getPos() {
+        return pos;
+    }
+
     public void MovingCar(Integer count) {
         pos += count;
     }
