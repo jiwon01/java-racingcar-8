@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import camp.nextstep.edu.missionutils.*;
 
 public class Game {
-    public void StartGame() {
+    public void startGame() {
         // 자동차 이름 목록 입력
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
         String userInput = Console.readLine();
@@ -75,7 +75,7 @@ public class Game {
      */
     private void startRound(Car[] cars) {
         for (Car car : cars) {
-            car.MovingCar(getRandomNumber());
+            car.movingCar(getRandomNumber());
         }
     }
 

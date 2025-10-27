@@ -17,7 +17,7 @@ public class Car {
         return pos;
     }
 
-    public void MovingCar(Integer count) {
+    public void movingCar(Integer count) {
         pos += count;
     }
 
