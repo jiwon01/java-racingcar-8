@@ -5,6 +5,7 @@ import camp.nextstep.edu.missionutils.Console;
 public class Game {
     public void StartGame() {
         // 자동차 이름 목록 입력
+        System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
         String userInput = Console.readLine();
 
         // 유효성 검증
@@ -13,7 +14,8 @@ public class Game {
         // 자동차 목록 저장
         String[] carNames = userInput.split(",");
 
-
+        System.out.println("시도할 횟수는 몇 회인가요?");
+        Integer userCountInput = Integer.valueOf(Console.readLine());
     }
 
     /**
