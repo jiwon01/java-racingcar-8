@@ -16,6 +16,13 @@ public class Game {
 
         System.out.println("시도할 횟수는 몇 회인가요?");
         Integer userCountInput = Integer.valueOf(Console.readLine());
+
+        // 자동차 객체가 들어있는 배열
+        Car[] cars = new Car[carNames.length];
+
+        for (int i = 0; i < carNames.length; i++) {
+            cars[i] = new Car(carNames[i]);
+        }
     }
 
     /**
