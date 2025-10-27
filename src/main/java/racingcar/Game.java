@@ -1,9 +1,11 @@
 package racingcar;
 
+import camp.nextstep.edu.missionutils.Console;
+
 public class Game {
     public void StartGame() {
         // 자동차 이름 목록 입력
-        String userInput = camp.nextstep.edu.missionutils.Console.readLine();
+        String userInput = Console.readLine();
 
         // 유효성 검증
         validateCarNames(userInput);
