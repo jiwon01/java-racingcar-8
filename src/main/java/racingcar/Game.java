@@ -92,20 +92,22 @@ public class Game {
      * 우승자 출력
      */
     private void showWinner(List<Car> cars) {
-        int maxPos = cars.stream()
-                .mapToInt(car -> car.getPos())
+        int maxPos = findMaxPosition(cars);
+        String winnerNames = getWinnerNames(cars, maxPos);
+        System.out.println("최종 우승자 : " + winnerNames);
+    }
+
+    private int findMaxPosition(List<Car> cars) {  // depth 줄이기
+        return cars.stream()
+                .mapToInt(Car::getPos)
                 .max()
                 .orElse(0);
+    }
 
-        List<Car> winners = new ArrayList<>();
-        for (Car car : cars)
-            if (car.getPos() == maxPos) {
-                winners.add(car);
-            }
-
-        System.out.println("최종 우승자 : " + cars.stream()
+    private String getWinnerNames(List<Car> cars, int maxPos) {  // depth 줄이기
+        return cars.stream()
                 .filter(car -> car.getPos() == maxPos)
                 .map(Car::getName)
-                .collect(Collectors.joining(",")));
+                .collect(Collectors.joining(","));
     }
 }
